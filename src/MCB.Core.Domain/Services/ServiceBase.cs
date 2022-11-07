@@ -10,11 +10,8 @@ using MCB.Core.Infra.CrossCutting.DesignPatterns.Validator.Abstractions.Models;
 
 namespace MCB.Core.Domain.Services;
 
-public abstract class ServiceBase<TAggregationRoot>
-    : IService<TAggregationRoot>
-    where TAggregationRoot : IAggregationRoot
+public abstract class ServiceBase
 {
-    // Messages
     public static readonly string AggregationRootShouldExistsInRepositoryErrorCode = nameof(AggregationRootShouldExistsInRepositoryErrorCode);
     public static readonly string AggregationRootShouldExistsInRepositoryMessage = nameof(AggregationRootShouldExistsInRepositoryMessage);
     public static readonly NotificationType AggregationRootShouldExistsInRepositoryNotificationType = NotificationType.Error;
@@ -22,7 +19,13 @@ public abstract class ServiceBase<TAggregationRoot>
     public static readonly string AggregationRootShouldNotExistsInRepositoryErrorCode = nameof(AggregationRootShouldNotExistsInRepositoryErrorCode);
     public static readonly string AggregationRootShouldNotExistsInRepositoryMessage = nameof(AggregationRootShouldNotExistsInRepositoryMessage);
     public static readonly NotificationType AggregationRootShouldNotExistsInRepositoryNotificationType = NotificationType.Error;
+}
 
+public abstract class ServiceBase<TAggregationRoot>
+    : ServiceBase,
+    IService<TAggregationRoot>
+    where TAggregationRoot : IAggregationRoot
+{
     // Properties
     protected INotificationPublisher NotificationPublisher { get; }
     protected IDomainEventPublisher DomainEventPublisher { get; }

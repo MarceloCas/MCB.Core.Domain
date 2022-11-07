@@ -5,7 +5,7 @@ using MCB.Core.Infra.CrossCutting.DesignPatterns.Observer;
 
 namespace MCB.Core.Domain.DomainEvents;
 
-internal class DomainEventPublisherInternal
+public class DomainEventPublisherInternal
     : PublisherBase,
     IDomainEventPublisherInternal
 {

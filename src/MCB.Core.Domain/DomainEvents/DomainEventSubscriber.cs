@@ -4,7 +4,7 @@ using System.Collections.Concurrent;
 
 namespace MCB.Core.Domain.DomainEvents;
 
-internal class DomainEventSubscriber
+public class DomainEventSubscriber
     : IDomainEventSubscriber
 {
     // Fields
@@ -14,7 +14,7 @@ internal class DomainEventSubscriber
     public IEnumerable<IDomainEvent> DomainEventCollection => _domainEventCollection.AsEnumerable();
 
     // Constructors
-    internal DomainEventSubscriber()
+    public DomainEventSubscriber()
     {
         _domainEventCollection = new ConcurrentQueue<IDomainEvent>();
     }

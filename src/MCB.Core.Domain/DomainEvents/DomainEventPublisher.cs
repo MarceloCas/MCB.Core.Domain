@@ -4,21 +4,21 @@ using MCB.Core.Domain.Entities.Abstractions.DomainEvents;
 
 namespace MCB.Core.Domain.DomainEvents;
 
-internal class DomainEventPublisher
+public class DomainEventPublisher
     : IDomainEventPublisher
 {
     // Fields
     private readonly IDomainEventPublisherInternal _DomainEventPublisherInternal;
 
     // Constructors
-    internal DomainEventPublisher(IDomainEventPublisherInternal DomainEventPublisherInternal)
+    public DomainEventPublisher(IDomainEventPublisherInternal DomainEventPublisherInternal)
     {
         _DomainEventPublisherInternal = DomainEventPublisherInternal;
     }
 
     // Public Methods
-    public Task PublishDomainEventAsync(IDomainEvent DomainEvent, CancellationToken cancellationToken)
+    public Task PublishDomainEventAsync(IDomainEvent domainEvent, CancellationToken cancellationToken)
     {
-        return _DomainEventPublisherInternal.PublishAsync(DomainEvent, cancellationToken);
+        return _DomainEventPublisherInternal.PublishAsync(domainEvent, cancellationToken);
     }
 }
