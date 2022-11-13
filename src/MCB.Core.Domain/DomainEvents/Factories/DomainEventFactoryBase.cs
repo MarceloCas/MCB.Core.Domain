@@ -15,12 +15,12 @@ public abstract class DomainEventFactoryBase
     }
 
     // Protected Methods
-    protected (Guid id, DateTimeOffset timestamp, string domainEventType) GetBaseEventFields<TDomainEvent>()
+    protected (Guid id, DateTime timestamp, string domainEventType) GetBaseEventFields<TDomainEvent>()
         where TDomainEvent : IDomainEvent
     {
         return (
             id: Guid.NewGuid(),
-            timestamp: DateTimeProvider.GetDate(),
+            timestamp: DateTimeProvider.GetDate().UtcDateTime,
             domainEventType: typeof(TDomainEvent).FullName ?? string.Empty
         );
     }
