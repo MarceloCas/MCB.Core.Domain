@@ -14,7 +14,7 @@
 	  <PackageReference Include="MCB.Core.Domain.Entities.Abstractions" Version="0.29.0-alpha" />
 	  <PackageReference Include="MCB.Core.Infra.CrossCutting.Abstractions" Version="0.6.0-alpha" />
 	  <PackageReference Include="MCB.Core.Infra.CrossCutting.DependencyInjection.Abstractions" Version="0.6.0-alpha" />
-	  <PackageReference Include="MCB.Core.Infra.CrossCutting.DesignPatterns" Version="0.17.0-alpha" />
+	  <PackageReference Include="MCB.Core.Infra.CrossCutting.DesignPatterns" Version="0.18.0-alpha" />
 	  <PackageReference Include="MCB.Core.Infra.CrossCutting.DesignPatterns.Validator" Version="0.16.0-alpha" />
 	</ItemGroup>
 

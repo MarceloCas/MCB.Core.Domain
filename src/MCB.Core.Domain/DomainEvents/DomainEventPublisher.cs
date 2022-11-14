@@ -19,6 +19,6 @@ public class DomainEventPublisher
     // Public Methods
     public Task PublishDomainEventAsync(IDomainEvent domainEvent, CancellationToken cancellationToken)
     {
-        return _DomainEventPublisherInternal.PublishAsync(domainEvent, cancellationToken);
+        return _DomainEventPublisherInternal.PublishAsync(domainEvent, subjectBaseType: typeof(IDomainEvent), cancellationToken);
     }
 }
